@@ -6,9 +6,11 @@ import {
   StyleSheet,
   View,
   TextInput,
-  SafeAreaView,
+  Button,
   Text,
-  Pressable
+  Pressable,
+  Touchable,
+  TouchableOpacity
 } from 'react-native';
 import { useState } from 'react';
 import Snackbar from 'react-native-snackbar';
@@ -42,6 +44,12 @@ function App(): React.JSX.Element {
     }
   }
 
+  const resetCurrency = () => {
+    setInputValue("")
+    setResultValue("")
+    setTargetCurrency("")
+  }
+
   return (
     <>
       <StatusBar backgroundColor={"black"} />
@@ -52,6 +60,7 @@ function App(): React.JSX.Element {
             <TextInput style={styles.inputText} keyboardType='number-pad' maxLength={14} placeholder='Enter amount in Egypt Pound ' onChangeText={setInputValue} value={inputValue} />
           </View>
           {resultValue && <Text style={styles.resultTxt}>{resultValue}</Text>}
+          <TouchableOpacity style={styles.resetBtn} onPress={resetCurrency}><Text style={styles.resetTxt}>Reset Currency</Text></TouchableOpacity>
         </View>
         <View style={styles.bottomContainer}>
           <FlatList
@@ -96,6 +105,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
   },
+  resetBtn: { backgroundColor: "orange", borderRadius: 8, padding: 5, elevation: 7 },
+  resetTxt: { fontSize: 15, fontWeight: "500", color: "black" },
   inputText: { fontSize: 20, fontWeight: "500", borderWidth: 0.6, borderRadius: 5, borderCurve: "continuous" },
   bottomContainer: {
     flex: 3,
