@@ -1,3 +1,9 @@
+DESCRIPTION:
+************
+==>> This is project converts the egyptian pound that you enterd to know the opposite currency such as Euro or dollar Etc .. 
+i achievd that with an pretty style .
+
+
 This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
 # Getting Started
